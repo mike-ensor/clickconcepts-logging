@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.clickconcepts.logging</groupId>
+    <artifactId>clickconcepts-logging</artifactId>
+    <version>0.01-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>com.clickconcepts.project</groupId>
+        <artifactId>master-site-pom</artifactId>
+        <version>0.18</version>
+    </parent>
+
+    <name>${project.artifactId}</name>
+    <description>Contains logging dependencies and configuration</description>
+    <url>${project.scm.url}</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:ssh://${repository.domain}/${repository.user}/${repository.name}.git</connection>
+        <url>https://${repository.domain}/${repository.user}/${repository.name}</url>
+        <developerConnection>scm:git:ssh://${repository.domain}/${repository.user}/${repository.name}.git</developerConnection>
+    </scm>
+
+    <distributionManagement>
+        <site>
+            <id>site-docs</id>
+            <url>http://${repository.user}.${repository.domain}/${repository.name}</url>
+        </site>
+        <downloadUrl>${project.scm.url}</downloadUrl>
+    </distributionManagement>
+
+    <inceptionYear>2013</inceptionYear>
+
+    <organization>
+        <name>Click Concepts</name>
+        <url>http://www.ensor.cc</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>Mike Ensor</name>
+            <email>mike@clickconcepts.com</email>
+            <organization>Click Concepts</organization>
+            <organizationUrl>http://www.ensor.cc</organizationUrl>
+            <roles>
+                <role>Principal Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <properties>
+        <repository.domain>github.com</repository.domain>
+        <repository.user>mike-ensor</repository.user>
+        <repository.name>${project.artifactId}</repository.name>
+        <!-- Parameters for Site Docs -->
+        <scmUrl>${project.scm.url}</scmUrl>
+        <gitUrl>git@${repository.domain}:${repository.user}/${repository.name}.git</gitUrl>
+        <!-- Used for Google Search on Site Documentation page -->
+        <sitesearchValue>${repository.user}.${repository.domain}</sitesearchValue>
+
+        <changelog.fileUri>${changelog.github.fileUri}</changelog.fileUri>
+        <changelog.revision.fileUri>${changelog.revision.github.fileUri}</changelog.revision.fileUri>
+
+
+        <!-- Override Site Documentation SCM publishing parameters  -->
+        <scm-publish.scmBranch>master</scm-publish.scmBranch>
+        <scm-publish.pubScmUrl>scm:git:git@${repository.domain}:${repository.user}/${repository.name}.git</scm-publish.pubScmUrl>
+
+        <!-- dependency versions -->
+        <logback.version>1.0.9</logback.version>
+        <slf4j.version>1.7.2</slf4j.version>
+
+    </properties>
+
+    <issueManagement>
+        <url>https://github.com/issues/</url>
+        <system>Github Issues</system>
+    </issueManagement>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
