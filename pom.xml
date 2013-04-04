@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.clickconcepts.logging</groupId>
     <artifactId>clickconcepts-logging</artifactId>
-    <version>0.02-SNAPSHOT</version>
+    <version>0.02</version>
     <packaging>pom</packaging>
 
     <parent>
@@ -29,7 +29,7 @@
         <connection>scm:git:ssh://${repository.domain}/${repository.user}/${repository.name}.git</connection>
         <url>https://${repository.domain}/${repository.user}/${repository.name}</url>
         <developerConnection>scm:git:ssh://${repository.domain}/${repository.user}/${repository.name}.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>clickconcepts-logging-0.02</tag>
   </scm>
 
     <distributionManagement>
