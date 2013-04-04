@@ -9,7 +9,7 @@
     <parent>
         <groupId>com.clickconcepts.project</groupId>
         <artifactId>master-site-pom</artifactId>
-        <version>0.18</version>
+        <version>0.19</version>
     </parent>
 
     <name>${project.artifactId}</name>
