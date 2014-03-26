@@ -4,7 +4,7 @@
     <groupId>com.clickconcepts.logging</groupId>
     <artifactId>clickconcepts-logging</artifactId>
     <version>0.02-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>com.clickconcepts.project</groupId>
@@ -78,8 +78,9 @@
         <scm-publish.pubScmUrl>scm:git:git@${repository.domain}:${repository.user}/${repository.name}.git</scm-publish.pubScmUrl>
 
         <!-- dependency versions -->
-        <logback.version>1.0.11</logback.version>
-        <slf4j.version>1.7.5</slf4j.version>
+        <janino.version>2.6.1</janino.version>
+        <logback.version>1.1.1</logback.version>
+        <slf4j.version>1.7.6</slf4j.version>
 
     </properties>
 
@@ -88,31 +89,57 @@
         <system>Github Issues</system>
     </issueManagement>
 
+
+	<build>
+		<plugins>
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-jar-plugin</artifactId>
+    <version>2.4</version>
+    <configuration>
+        <includes>
+            <include>**/*.class</include>
+            <include>**/*.xml</include>
+        </includes>
+    </configuration>
+</plugin>
+		</plugins>
+	</build>
+
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-classic</artifactId>
-                <version>${logback.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
+	<dependency>
+		<groupId>ch.qos.logback</groupId>
+		<artifactId>logback-classic</artifactId>
+		<version>${logback.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+		<version>${slf4j.version}</version>
+          </dependency>
+	<dependency>
+		<!-- Needed for conditionals -->
+		<groupId>org.codehaus.janino</groupId>
+		<artifactId>janino</artifactId>
+		<version>${janino.version}</version>
+	</dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
+		<groupId>ch.qos.logback</groupId>
+		<artifactId>logback-classic</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+	</dependency>
+	<dependency>
+                <groupId>org.codehaus.janino</groupId>
+                <artifactId>janino</artifactId>
+	</dependency>
     </dependencies>
 
 </project>
