@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.clickconcepts.logging</groupId>
     <artifactId>clickconcepts-logging</artifactId>
-    <version>0.03-SNAPSHOT</version>
+    <version>0.02-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <parent>
@@ -81,6 +81,17 @@
         <janino.version>2.6.1</janino.version>
         <logback.version>1.1.1</logback.version>
         <slf4j.version>1.7.6</slf4j.version>
+
+        <checkstyle.skip>true</checkstyle.skip>
+        <cobertura.skip>true</cobertura.skip>
+        <!-- Cobertura is not active by default, look for project>cobertura plugin for more details -->
+        <codenarc.skip>true</codenarc.skip>
+        <!-- Codenarc turned off by default -->
+        <enforcer.skip>true</enforcer.skip>
+        <findbugs.skip>true</findbugs.skip>
+        <javadocs.skip>false</javadocs.skip>
+        <pmd.skip>true</pmd.skip>
+        <versions.skip>true</versions.skip>
 
     </properties>
 
